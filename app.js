@@ -29,6 +29,7 @@ app.use(ratelimiter({
   windowMs:15*60*1000,
   max:100,
 }))
+app.use(express.static('./public'));
 app.use(express.json());
 app.use(helmet());
 app.use(cors());
