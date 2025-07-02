@@ -19,6 +19,8 @@ const authenticationUser=require('./middleware/authentication')
 const authrouter=require('./routes/auth')
 const jobsrouter=require('./routes/jobs')
 
+
+
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
@@ -29,7 +31,7 @@ app.use(ratelimiter({
   windowMs:15*60*1000,
   max:100,
 }))
-app.use(express.static('./public'));
+
 app.use(express.json());
 app.use(helmet());
 app.use(cors());
